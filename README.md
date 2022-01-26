@@ -36,3 +36,16 @@ netstat -anp
 
 5. 这样就将被占用的8080端口程序退出了。然后重新运行服务启动命令即可
 
+## 设置npm镜像源
+### 查看当前设置的镜像源
+```shell
+npm config get registry
+```
+### 设置npmjs源
+```shell
+npm config set registry=http://registry.npmjs.org
+```
+### 设置淘宝镜像源
+```shell
+npm config set registry http://registry.npm.taobao.org
+```
