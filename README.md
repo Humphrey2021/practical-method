@@ -49,3 +49,37 @@ npm config set registry=http://registry.npmjs.org
 ```shell
 npm config set registry http://registry.npm.taobao.org
 ```
+
+## 关于git命令
+### 本地远程关联
+```shell
+# 查看关联信息
+git remote -v
+# 删除关联
+git remote rm 远程别名
+# 新增关联
+git remote add 别名 远程仓库地址
+```
+### git用户名和邮箱地址
+```shell
+# 查看用户名和邮箱
+git config user.name
+git config user.email
+# 修改用户名和邮箱地址
+git config user.name "yourname"
+git config user.email "youremail"
+```
+
+### 版本查看回退
+```shell
+# 查看版本号
+git log
+# 回退到上一个版本
+git reset --hard HEAD^
+# 回退到前3次提交之前，以此类推，回退到n次提交之前
+git reset --hard HEAD~3
+# 回退到指定版本
+git reset --hard 目标版本号
+# 强制推送
+git push -f
+```
