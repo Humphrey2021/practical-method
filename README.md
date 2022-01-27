@@ -49,6 +49,13 @@ npm config set registry=http://registry.npmjs.org
 ```shell
 npm config set registry http://registry.npm.taobao.org
 ```
+### 如果在运行某些命令的时候，需要使用别的npm源，但是又不想更改全局可以使用下面的方法
+```shell
+# 添加 --registry 参数
+# 举个例子 发布npm模块
+yarn publish --registry https://registry.yarnpkg.com
+# 这样可以为当前这条命令指定对应的npm源，又不会修改全局的
+```
 
 ## 关于git命令
 ### 本地远程关联
