@@ -76,7 +76,6 @@ git config user.email
 git config user.name "yourname"
 git config user.email "youremail"
 ```
-
 ### 版本查看回退
 ```shell
 # 查看版本号
@@ -89,6 +88,12 @@ git reset --hard HEAD~3
 git reset --hard 目标版本号
 # 强制推送
 git push -f
+```
+### 修改提交时间
+偷摸摸的，不要告诉别人哦～
+```shell
+# 时间随便改～
+git commit --amend --date="Thu Dec 10 00:00:01 2022 -0700"
 ```
 
 ## 关于vue路由中的history模式刷新404问题
@@ -115,3 +120,4 @@ server {
     ...
 }
 ```
+
