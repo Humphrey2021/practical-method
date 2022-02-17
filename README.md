@@ -90,3 +90,28 @@ git reset --hard 目标版本号
 # 强制推送
 git push -f
 ```
+
+## 关于vue路由中的history模式刷新404问题
+### node服务器解决方法
+在node配置文件中添加以下代码
+```js
+// 先安装这个插件 connect-history-api-fallback
+// 导入处理history模块的模块
+const history = require('connect-history-api-fallback')
+// 注册处理 history 模式的中间件
+app.use(history())
+```
+### nginx服务解决方法
+找到`nginx.conf`文件,修改配置
+```conf
+server {
+    ...
+    location / {
+        root html;
+        index index.html index.htm
+        # 添加下面一段代码,就可以解决history模式刷新404问题
+        try_files $uri $uri/ /index.html
+    }
+    ...
+}
+```
