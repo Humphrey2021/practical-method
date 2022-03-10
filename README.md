@@ -58,6 +58,65 @@ yarn publish --registry https://registry.yarnpkg.com
 ```
 
 ## 关于git命令
+
+### 常用命令
+```shell
+# 将本地代码提交到暂存库
+git add .
+# 添加提交信息
+git commit -m '提交的信息'
+# 拉取代码 origin 为远程仓库别名    master 为分支名
+git pull origin master
+# 提交代码 origin 为远程仓库别名    self 为分支名
+git push origin self
+# 切换到 主分支 一般都是 master 具体根据项目来
+git checkout master
+# 将自己的分支合并到主分支---注意这一步，需要保证自己的代码没有问题或者冲突解决完以后再合并
+git merge self
+# 提交代码 origin 为远程仓库别名  master 为分支名
+git push origin master
+# 切换回自己的分支
+git checkout self
+# 切换并创建分支
+git checkout -b xxx
+# 查看本地所有分支
+git branch
+# 查看所有分支，包括远程
+git branch -a
+# 查看远程所有分支
+git branch -r
+# 删除本地分支---注意，需要先切换到别的分支，才能删除这个分支
+git branch -D xxx
+# 删除远程仓库分支
+git push origin --delete xxx
+```
+
+### 拓展
+```shell
+# 查看关联信息 即上面说的 origin 别名
+git remote -v
+# 删除关联
+git remote rm 远程别名
+# 新增关联
+git remote add 别名 远程仓库地址
+# 查看版本号
+git log
+# 回退到上一个版本
+git reset --hard HEAD^
+# 回退到前3次提交之前，以此类推，回退到n次提交之前
+git reset --hard HEAD~3
+# 回退到指定版本
+git reset --hard 目标版本号
+# 强制推送
+git push -f
+# 查看用户名和邮箱
+git config user.name
+git config user.email
+# 修改用户名和邮箱地址
+git config user.name "yourname"
+git config user.email "youremail"
+```
+
 ### 本地远程关联
 ```shell
 # 查看关联信息
