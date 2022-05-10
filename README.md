@@ -180,3 +180,23 @@ server {
 }
 ```
 
+## 去除数据中所有字符串的前后空格
+const trimData = data => {
+  const isNumber = num => typeof num === 'number'
+  const isString = str => typeof str === 'string'
+  const isFn = fn => typeof fn === 'function'
+  const isArray = arr => arr instanceof Array
+  const isObject = obj => typeof obj === 'object' && obj instanceof Object
+  let changeV = obj => {
+    let a = Object.entries(obj).map(item => [item[0], trimD(item[1])])
+    return Object.fromEntries(a)
+  }
+  const trimD = data => {
+    if (isNumber(data) || isFn(data)) return data // 数字或函数类型
+    if (isString(data)) return data.trim() // 字符串类型
+    if (isArray(data)) return data.map(item => trimD(item)) // 数组类型
+    if (isObject(data)) return changeV(data)// 对象类型
+  }
+  return trimD(data)
+}
+
